@@ -7,7 +7,7 @@ class PalindromsController < ApplicationController
         @result_arr = []
         @number = params[:num].to_i
         i = 0
-        if @number < 0
+        if @number <= 0
             redirect_to home_path, notice: 'Вводите числа больше 0'
         else
             while i <= @number
