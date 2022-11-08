@@ -19,16 +19,14 @@
     <th>Число</th>
     <th>Квадрат числа</th>
     </tr>
-    <% i = 0 %>
-    <% while (i < @result_arr.size) do %>
+    <% @res_arr.each do |elem|%>
     <tr>
-        <td><%= @result_arr[i]%></td>
-        <td><%= @result_arr[i]**2 %></td>
+        <td><%= elem %></td>
+        <td><%= elem**2 %></td>
     </tr>
-    <% i+= 1 %>
     <% end%>
 </table>
 Количество таких чисел
-<p id="counter"><%= @counter %></p>
+<p id="counter"><%= @res_arr.size %></p>
 <%= link_to "Вернуться назад", home_path %>
 </body>
