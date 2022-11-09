@@ -31,15 +31,12 @@ RSpec.describe PalindromsController, type: :controller do
     end
   end
 end
-# RSpec.describe PalindromsController, type: :controller do
-#   context 'notice message test' do
-#     #let(:params){:num => -1} 
-#     it 'return notice message' do
-#       @obj = PalindromsController.new
-#       post :result, :params => { :widget => { :num => -1 } }
-#       p controller.params[:num]
-#       @obj.result
-#       expect(flash[:notice]).to eq('Вводите числа >= 0')
-#     end
-#   end
-# end
+
+RSpec.describe PalindromsController, type: :request do
+  context 'notice message test' do
+    it 'return notice message' do
+      get '/palindroms/result?num=-1'
+      expect(flash[:notice]).to eq('Вводите числа >= 0')
+    end
+  end
+end

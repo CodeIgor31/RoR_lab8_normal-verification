@@ -2,8 +2,5 @@
 
 require 'test_helper'
 
-class PalindromsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class PalindromsControllerTest < ActionController::TestCase
 end
